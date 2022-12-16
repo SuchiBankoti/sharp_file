@@ -30,4 +30,12 @@
    </div>
   </div>
 </body>
+<script>
+    let unorderedList=document.getElementById("items")
+    let newList=document.createElement("li")
+    newList.classList.add("newListItem")
+    unorderedList.appendChild(newList)
+    let li=document.getElementsByTagName("li")
+    li[0].textContent="pink"
+</script>
 </html>
