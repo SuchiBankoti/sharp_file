@@ -1,78 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link href="style.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <title>Item Lister</title>
 </head>
 <body>
-   <div class="container">
-    <div class="row">
-<div class="col-8">
-<div class="box">
-    <h2>Add User</h2>
-    <br/>
-    <form action="" id="form">
-    <label for="name">Name:
-        <br/>
-    <input type="text" value="" id="name">
-    </label>
-    <br/>
-    <br/>
-    <label for="mail">Email-Id:
-        <br/>
-    <input type="text" value="" id="mail">
-    </label>
-    </form>
-    <br/>
-    <br/>
-    <button>Submit</button>
-</div>
-</div>
-<div class="col-4">
-<div class="user-list">
-<ul>
-    <li style="background-color:green">Hello</li>
-</ul>
-</div>
-</div>
+  <header id="main-header" class="bg-success text-white p-4 mb-3">
+    <div class="container">
+      <h1 id="header-title">Item Lister <span style="display:none">123</span></h1>
     </div>
- </div>
+  </header>
+  <div class="container">
+   <div id="main" class="card card-body">
+    <h2 class="title">Add Items</h2>
+    <form class="form-inline mb-3">
+      <input type="text" class="form-control mr-2">
+      <input type="submit" class="btn btn-dark" value="Submit">
+    </form>
+    <h2 class="title">Items</h2>
+    <ul id="items" class="list-group">
+      <li class="list-group-item"><b>Item 1</b></li>
+      <li class="list-group-item"><b>Item 2</b></li>
+      <li class="list-group-item" style="background-color: green;"><b>Item 3</b></li>
+      <li class="list-group-item"><b>Item 4</b></li>
+    </ul>
+   </div>
+  </div>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-<script>
-    class User {
-static userCount = 0
-constructor(name, email) {
-    this.name = name
-    this.email = email
-    this.membershipActiveTillDate = () => {
-        const current = new Date()
-        current.setDate(current.getDate() + 30);
-        return current.toDateString()
-    }
-    User.userCount = User.userCount + 1
-}
-}
-let userName=document.getElementById("name")
-let userMail=document.getElementById("mail")
-let userList=document.querySelector("ul")
-
-function updateUserList(){
-    let addUser=new User(userName.value,userMail.value)
-    let membership=addUser.membershipActiveTillDate()
-    let newUser=document.createElement("li")
-      newUser.classList.add("user")
-    newUser.textContent=`Name-${addUser.name} Email-id-${addUser.email} MemeberShipTill-${membership}`
-    userList.appendChild(newUser)
-    console.log(userList)
-}
-let btn=document.querySelector("button")
-btn.addEventListener("click", updateUserList)
-btn.addEventListener("mouseover", ()=>btn.style.backgroundColor="red")
-btn.addEventListener("mouseout", ()=>btn.style.backgroundColor="black")
-</script>
 </html>
