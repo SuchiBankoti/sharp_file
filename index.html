@@ -24,7 +24,7 @@
     <ul id="items" class="list-group">
       <li class="list-group-item"><b>Item 1</b></li>
       <li class="list-group-item"><b>Item 2</b></li>
-      <li class="list-group-item" style="background-color: green;"><b>Item 3</b></li>
+      <li class="list-group-item"><b>Item 3</b></li>
       <li class="list-group-item"><b>Item 4</b></li>
     </ul>
    </div>
@@ -35,7 +35,9 @@
     let newList=document.createElement("li")
     newList.classList.add("newListItem")
     unorderedList.appendChild(newList)
-    let li=document.getElementsByTagName("li")
-    li[0].textContent="pink"
+    let li=document.querySelectorAll("li")
+    li[0].style.backgroundColor="green"
+    li[2].style.color="transparent"
+    console.log(li)
 </script>
 </html>
