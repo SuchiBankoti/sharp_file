@@ -4,6 +4,8 @@ let searchBar = document.getElementById("filter")
 searchBar.addEventListener("keyup", filter)
 form.addEventListener("submit", additem)
 itemList.addEventListener("click", removeItem)
+itemList.parentElement.style.backgroundColor = "blue"
+itemList.lastElementChild.style.backgroundColor = "green"
 function additem(e) {
     e.preventDefault();
     let input = document.getElementById("item")
